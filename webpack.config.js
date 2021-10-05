@@ -1,5 +1,5 @@
-const path = require('path');
-const webpack = require('webpack');
+const path = require("path");
+const webpack = require("webpack");
 
 /*
  * SplitChunksPlugin is enabled by default and replaced
@@ -23,8 +23,8 @@ const webpack = require('webpack');
  *
  */
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 /*
  * We've enabled TerserPlugin for you! This minifies your app
@@ -34,79 +34,91 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
  *
  */
 
-const TerserPlugin = require('terser-webpack-plugin');
-
-const workboxPlugin = require('workbox-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
-	mode: 'development',
-	entry: path.resolve('src', 'js', 'index.js'),
+  mode: "development",
+  entry: path.resolve("src", "js", "index.js"),
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
+  },
+  plugins: [
+    new webpack.ProgressPlugin(),
+    new MiniCssExtractPlugin({ filename: "main.css" }),
+    new HtmlWebpackPlugin({
+      template: path.resolve("src", "index.pug"),
+    }),
+  ],
 
-	plugins: [
-		new webpack.ProgressPlugin(),
-		new MiniCssExtractPlugin({ filename: 'main.[chunkhash].css' }),
-		new workboxPlugin.GenerateSW({
-			swDest: 'sw.js',
-			clientsClaim: true,
-			skipWaiting: false
-		}),
-		new HtmlWebpackPlugin({
-			template: path.resolve('src', 'index.pug')
-		})
-	],
+  module: {
+    rules: [
+      {
+        test: /.pug$/,
+        use: ["pug-loader"],
+      },
+      {
+        test: /.(scss|css)$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: "css-loader",
 
-	module: {
-		rules: [
-			{
-				test: /.pug$/,
-				use: [ 'pug-loader' ]
-			},
-			{
-				test: /.(js|jsx)$/,
-				include: [],
-				loader: 'babel-loader'
-			},
-			{
-				test: /.(scss|css)$/,
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: "sass-loader",
 
-				use: [
-					{
-						loader: MiniCssExtractPlugin.loader
-					},
-					{
-						loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
+      {
+        test: /\.(png|svg|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "img/",
+            },
+          },
+        ],
+      },
+    ],
+  },
 
-						options: {
-							sourceMap: true
-						}
-					},
-					{
-						loader: 'sass-loader',
+  optimization: {
+    minimizer: [new TerserPlugin()],
 
-						options: {
-							sourceMap: true
-						}
-					}
-				]
-			}
-		]
-	},
+    splitChunks: {
+      cacheGroups: {
+        vendors: {
+          priority: -10,
+          test: /[\\/]node_modules[\\/]/,
+        },
+      },
 
-	optimization: {
-		minimizer: [new TerserPlugin()],
-
-		splitChunks: {
-			cacheGroups: {
-				vendors: {
-					priority: -10,
-					test: /[\\/]node_modules[\\/]/
-				}
-			},
-
-			chunks: 'async',
-			minChunks: 1,
-			minSize: 30000,
-			name: true
-		}
-	}
+      chunks: "async",
+      minChunks: 1,
+      minSize: 30000,
+      name: true,
+    },
+  },
 };
