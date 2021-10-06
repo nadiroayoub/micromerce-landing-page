@@ -1,0 +1,53 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  font-family: $principal_font;
+  font-size: 1.6rem;
+  // &.no-scroll {
+  //   position: fixed;
+  //   overflow: hidden;
+  // }
+}
+p {
+  color: $black;
+  font-size: 2rem;
+}
+.container {
+  max-width: 1356px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 900;
+  text-align: center;
+}
+ul {
+  list-style: none;
+  margin-bottom: 0;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+  }
+}

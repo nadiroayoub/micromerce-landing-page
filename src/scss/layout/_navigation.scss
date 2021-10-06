@@ -1,0 +1,40 @@
+.navbar {
+  background-color: $black;
+  height: 10rem;
+  &.navbar-mobile {
+    display: none;
+  }
+  .navbar-content {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .navbar-home-link {
+      a {
+        .svg-container {
+          position: relative;
+          height: 5.332rem;
+          width: 26.198rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          .micromerce-logo {
+            position: absolute;
+          }
+        }
+      }
+    }
+    .list-horizontal {
+      li {
+        a {
+          background-color: $yellow;
+          font-size: 1.5rem;
+          color: $white;
+          padding: 1.4rem 1.5rem 1.8rem 1.8rem;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
