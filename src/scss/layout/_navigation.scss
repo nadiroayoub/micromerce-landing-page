@@ -9,6 +9,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 2rem;
+    @media screen and (min-width: 1356px) {
+      padding: 0;
+    }
     .navbar-home-link {
       a {
         .svg-container {
@@ -26,8 +30,13 @@
       }
     }
     .list-horizontal {
+      display: none;
+      @include mobile(){
+        display: block;
+      }
       li {
-        a {
+        a.btn {
+          text-align: center;
           background-color: $yellow;
           font-size: 1.5rem;
           color: $white;

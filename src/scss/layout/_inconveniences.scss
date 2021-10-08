@@ -1,26 +1,69 @@
 .section.inconveniences {
   max-width: 1194px;
   margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  @include tablet() {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  @media screen and (min-width: 140rem) {
+    padding-left: 0;
+    padding-right: 0;
+  }
   .inconveniences.header {
-    margin-bottom: 8.2rem;
+    margin-bottom: 4.1rem;
+    @include desktop() {
+      margin-bottom: 8.2rem;
+    }
     .inconveniences_subtitle {
       color: $gray;
-      font-size: 2.4rem;
       font-weight: $regular;
       margin-bottom: 2.1rem;
+      font-size: 2.2rem;
+      @include tablet() {
+        font-size: 2.3rem;
+      }
+      @include desktop() {
+        font-size: 2.4rem;
+      }
     }
     .inconveniences_title {
-      font-size: 5.2rem;
+      font-size: 3.2rem;
+      @include tablet() {
+        font-size: 4.2rem;
+      }
+      @include desktop() {
+        font-size: 5.2rem;
+      }
       font-weight: $medium;
       line-height: 6.4rem;
       span {
-        display: block;
+        display: inline;
+        @include mobile() {
+          display: block;
+        }
+      }
+    }
+    .inconveniences_subtitle,
+    .inconveniences_title {
+      text-align: center;
+      @include desktop() {
+        text-align: left;
       }
     }
   }
   .inconvenciences-container {
-    @include grid(3, 8.7rem);
+    @include grid(1, 8.7rem);
+    @include tablet() {
+      @include grid(3, 8.7rem);
+    }
     .inconveniences-item {
+      max-width: 60rem; // Res
+      margin: auto;
+      @include tablet() {
+        max-width: 34rem; // Res
+      }
       .inconveniences-item_icon {
         display: flex;
         justify-content: center;
@@ -30,8 +73,12 @@
         width: 12.7rem;
         height: 12.7rem;
         margin-bottom: 3.8rem;
-        /* offset-x | offset-y | blur-radius | spread-radius | color */
         box-shadow: 0 10px 21px 0 rgba(0, 0, 0, 0.4);
+        margin-left: auto;
+        margin-right: auto;
+        @include tablet() {
+          margin-left: 0;
+        }
         img {
           width: 5.202rem;
           height: 5.202rem;
@@ -48,6 +95,13 @@
           font-size: 2.2rem;
           font-weight: $light;
           line-height: 3.6rem;
+        }
+        h4,
+        p {
+          text-align: center;
+          @include tablet() {
+            text-align: left;
+          }
         }
       }
     }

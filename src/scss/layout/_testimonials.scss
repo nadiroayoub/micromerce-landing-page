@@ -1,0 +1,109 @@
+.section.testimonials {
+  max-width: 119.6rem;
+  margin: 0 auto;
+  margin-bottom: 12.6rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  @include tablet() {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  @media screen and (min-width: 140rem) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .testimonial {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include tablet() {
+      flex-direction: row;
+    }
+    .testimonial-img {
+      flex-basis: 50%;
+      max-width: 62.7rem;
+      width: 100%;
+      margin: 0 auto;
+      margin-bottom: 3rem;
+      @include tablet() {
+        margin-bottom: 0;
+      }
+    }
+    .testimonial-text {
+      flex-basis: 50%;
+      @include tablet(){
+        margin-left: 5rem;
+      }
+      h2 {
+        font-weight: $medium;
+        line-height: 6.4rem;
+        margin-bottom: 5.1rem;
+        font-size: 3.2rem;
+        @include tablet() {
+          font-size: 4.2rem;
+        }
+        @include desktop() {
+          font-size: 5.2rem;
+        }
+      }
+      p,
+      h4 {
+        font-size: 2.2rem;
+        font-weight: $light;
+        line-height: 3.2rem;
+        margin-bottom: 3.6rem;
+        &.testimonial-text_name {
+          font-weight: $medium;
+        }
+        &.testimonial-text_company {
+          font-size: 2.2rem;
+        }
+      }
+      h4 {
+        margin-bottom: 1.8rem;
+      }
+      h2,
+      p,
+      h4 {
+        text-align: center;
+        @include tablet() {
+          text-align: left;
+        }
+      }
+      p {
+        max-width: 75%;
+        margin: auto;
+        @include tablet() {
+          max-width: 100%;
+        }
+        margin-bottom: 3.6rem;
+      }
+      .testimonial-text_btns {
+        display: flex;
+        justify-content: center;
+        @include tablet() {
+          justify-content: flex-start;
+        }
+        .testimonial-btn {
+          background-color: #c5c5c5;
+          width: 5.5rem;
+          height: 5.5rem;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &.btn-left {
+            margin-right: 3.6rem;
+          }
+          &.btn-right {
+            background-color: $yellow;
+          }
+        }
+      }
+    }
+  }
+}
+
+.more-testimonials{
+  
+}

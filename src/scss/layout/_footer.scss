@@ -1,0 +1,20 @@
+.footer {
+  .list-horizontal_footer {
+    display: none;
+    flex-direction: row;
+    @include tablet() {
+      display: flex;
+    }
+    li {
+      margin-right: 1rem;
+      @include tablet() {
+        margin-right: 3rem;
+      }
+      .link_footer {
+        color: $white;
+        font-weight: 2.4rem;
+        line-height: 7.2rem;
+      }
+    }
+  }
+}

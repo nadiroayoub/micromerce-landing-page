@@ -1,15 +1,33 @@
 header.header-wrapper {
-  margin-bottom: 12.6rem;
+  margin-bottom: 6.2rem;
+  @include desktop(){
+    margin-bottom: 12.6rem;
+  }
   .header-content {
     display: flex;
-    justify-content: col;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     padding-top: 9.7rem;
     position: relative;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @include tablet() {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+    @include desktop() {
+      padding-left: 0;
+      padding-right: 0;
+    }
     .header-content_title {
-      font-size: 6.418rem;
+      font-size: 3.418rem;
+      @include tablet() {
+        font-size: 5.418rem;
+      }
+      @include desktop() {
+        font-size: 6.418rem;
+      }
       font-weight: $bold;
       color: $black;
       margin-bottom: 4.3rem;
@@ -18,7 +36,10 @@ header.header-wrapper {
       }
     }
     .header-content_subtitle {
-      font-size: 3.552rem;
+      font-size: 2.552rem;
+      @include desktop() {
+        font-size: 3.552rem;
+      }
       font-weight: $light;
       margin-bottom: 6.6rem;
       margin-top: 0;
@@ -29,16 +50,27 @@ header.header-wrapper {
     }
     .header-content_btns {
       margin-bottom: 9.5rem;
+      display: flex;
+      @include tablet() {
+        display: block;
+      }
       a {
         color: $white;
-        font-size: 2.2rem;
         font-weight: $regular;
-        padding: 1.5rem 1.6rem 2rem 2rem;
+        padding: 1.1rem 1.2rem 1.6rem 1.6rem;
         border-radius: 5px;
         line-height: 2.557rem;
+        font-size: 1.7rem;
+        @include tablet() {
+          padding: 1.5rem 1.6rem 2rem 2rem;
+          font-size: 2.2rem;
+        }
         &:first-child {
           background-color: $yellow;
-          margin-right: 4.1rem;
+          margin-right: 2.1rem;
+          @include tablet() {
+            margin-right: 4.1rem;
+          }
         }
         &:last-child {
           background-color: transparent;
@@ -57,25 +89,54 @@ header.header-wrapper {
     .header-content_collab {
       display: flex;
       align-items: center;
-      .collab-bbraun_logo {
-        margin-right: 7.1rem;
-        max-height: 3.8rem;
-        max-width: 15.8rem;
+      justify-content: center;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+      @include tablet() {
+        flex-direction: row;
+        flex-wrap: nowrap;
       }
-      .collab-magicline_logo {
-        margin-right: 7.3rem;
-        max-height: 4.296rem;
-        max-width: 21.399rem;
-      }
-      .collab-neusta_logo {
-        margin-right: 6rem;
-        max-height: 4.3rem;
-        max-width: 14.6rem;
-      }
-      .collab-biltong_logo {
-        margin-right: 6.1rem;
-        max-height: 7.7rem;
-        max-width: 10.6rem;
+      .collab-logo {
+        margin-bottom: 1.5rem;
+        flex-basis: 100%;
+        text-align: center;
+        margin: 0 auto 2rem auto;
+        @include mobile() {
+          flex-basis: 33%;
+          margin-bottom: 0;
+        }
+        @include desktop() {
+          flex-basis: none;
+          margin-bottom: 0;
+        }
+        &.collab-bbraun_logo {
+          @include tablet() {
+            margin-right: 7rem;
+            max-height: 3.8rem;
+            max-width: 15.8rem;
+          }
+        }
+        &.collab-magicline_logo {
+          @include tablet() {
+            margin-right: 7.3rem;
+            max-height: 4.296rem;
+            max-width: 21.399rem;
+          }
+        }
+        &.collab-neusta_logo {
+          @include tablet() {
+            margin-right: 6rem;
+            max-height: 4.3rem;
+            max-width: 14.6rem;
+          }
+        }
+        &.collab-biltong_logo {
+          @include tablet() {
+            margin-right: 6.1rem;
+            max-height: 7.7rem;
+            max-width: 10.6rem;
+          }
+        }
       }
     }
     .header-content_bg {

@@ -1,6 +1,9 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
 *,
 *:before,
@@ -10,10 +13,6 @@ html {
 body {
   font-family: $principal_font;
   font-size: 1.6rem;
-  // &.no-scroll {
-  //   position: fixed;
-  //   overflow: hidden;
-  // }
 }
 p {
   margin: 0;
