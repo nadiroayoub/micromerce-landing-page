@@ -61,6 +61,7 @@
     .inconveniences-item {
       max-width: 60rem; // Res
       margin: auto;
+      height: 100%;
       @include tablet() {
         max-width: 34rem; // Res
       }
@@ -76,12 +77,12 @@
         box-shadow: 0 10px 21px 0 rgba(0, 0, 0, 0.4);
         margin-left: auto;
         margin-right: auto;
+        padding: 2.6rem;
         @include tablet() {
           margin-left: 0;
         }
         img {
-          width: 5.202rem;
-          height: 5.202rem;
+          width: 7.302rem;
         }
       }
       .inconveniences-item_text {

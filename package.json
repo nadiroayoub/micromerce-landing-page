@@ -27,5 +27,8 @@
     "build:prod": "webpack --mode=production",
     "build:dev": "webpack --mode=development",
     "server:dev": "webpack-dev-server --host 0.0.0.0"
+  },
+  "dependencies": {
+    "url-loader": "^4.1.1"
   }
 }

@@ -35,10 +35,11 @@
         display: block;
       }
       li {
-        a.btn {
+        a.list-horizontal_btn {
           text-align: center;
           background-color: $yellow;
           font-size: 1.5rem;
+          font-size: 2.2rem;
           color: $white;
           padding: 1.4rem 1.5rem 1.8rem 1.8rem;
           border-radius: 5px;

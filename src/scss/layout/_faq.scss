@@ -31,10 +31,12 @@
     .faq {
       box-shadow: 0px 15px 26.46px 0.54px rgba(0, 0, 0, 0.06);
       margin-bottom: 2.6rem;
+      border-radius: 5px;
+      border: 1px solid #ececec;
       @include tablet() {
         margin-bottom: 5.2rem;
       }
-      padding: 2.6rem 5.1rem 2.9rem 4.1rem;
+      padding: 2.6rem 5.1rem 0 4.1rem;
       h4,
       p {
         color: $black;
@@ -51,8 +53,8 @@
           background-repeat: no-repeat;
           background-size: contain;
           width: 1.5rem;
-          height: 1.5rem;
-          top: 50%;
+          height: 2.5rem;
+          top: 0;
           right: 0;
           transform: rotate(90deg);
           -webkit-transform: rotate(90deg);
@@ -60,6 +62,7 @@
           transition: 0.3s all ease-in-out;
           transform-origin: center;
           -ms-transform-origin: center;
+          cursor: pointer;
         }
         &.active {
           &::before {
@@ -70,15 +73,14 @@
         }
         &::after {
           content: "";
+        }
+        &.active-after::after {
           position: absolute;
-          border-bottom: 1px solid $gray;
+          border-bottom: 1px solid #ececec;
           width: 90%;
           height: 1.5rem;
-          bottom: -20%;
-          @include tablet() {
-            bottom: -50%;
-          }
           right: 0;
+          bottom: -110%;
         }
       }
       p {
@@ -88,7 +90,9 @@
         opacity: 0;
         height: 0;
         overflow: hidden;
+        padding-top: 0;
         &.active {
+          padding: 2rem 0 2.4rem 0;
           opacity: 1;
           height: auto;
         }

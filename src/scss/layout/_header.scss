@@ -1,6 +1,6 @@
 header.header-wrapper {
   margin-bottom: 6.2rem;
-  @include desktop(){
+  @include desktop() {
     margin-bottom: 12.6rem;
   }
   .header-content {
@@ -36,6 +36,7 @@ header.header-wrapper {
       }
     }
     .header-content_subtitle {
+      color: #919191;
       font-size: 2.552rem;
       @include desktop() {
         font-size: 3.552rem;
@@ -51,32 +52,61 @@ header.header-wrapper {
     .header-content_btns {
       margin-bottom: 9.5rem;
       display: flex;
-      @include tablet() {
+      flex-direction: column;
+      @include mobile() {
         display: block;
       }
       a {
         color: $white;
-        font-weight: $regular;
-        padding: 1.1rem 1.2rem 1.6rem 1.6rem;
+        font-weight: 400;
+        padding: 1rem 4rem;
         border-radius: 5px;
         line-height: 2.557rem;
         font-size: 1.7rem;
+        font-weight: $regular;
+        @include mobile() {
+          padding: 1.1rem 4.8rem 1.6rem 1.6rem;
+        }
         @include tablet() {
-          padding: 1.5rem 1.6rem 2rem 2rem;
+          padding: 1.5rem 5.2rem 2rem 2.1rem;
           font-size: 2.2rem;
         }
         &:first-child {
           background-color: $yellow;
-          margin-right: 2.1rem;
-          @include tablet() {
+          position: relative;
+          margin-right: 0rem;
+          margin-bottom: 2rem;
+          @include mobile() {
             margin-right: 4.1rem;
+          }
+          img {
+            position: absolute;
+            width: 0.8rem;
+            height: 1.6rem;
+            transform: rotate(90deg);
+            top: 1.55rem;
+            right: 2rem;
+            @include mobile() {
+              top: 1.8rem;
+              right: 2rem;
+            }
+            @include tablet() {
+              width: 1.1rem;
+              height: 1.9rem;
+            }
+            @include desktop() {
+              top: 2.05rem;
+            }
           }
         }
         &:last-child {
           background-color: transparent;
-          color: $black;
+          color: #565656;
           outline: 2px solid $yellow;
           opacity: 75%;
+          position: relative;
+          padding: 1.5rem 1.4rem 2rem 1.8rem;
+          text-align: center;
         }
       }
     }

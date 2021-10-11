@@ -19,25 +19,60 @@
     @include tablet() {
       flex-direction: row;
     }
+    .testimonial-text_persons,
+    .testimonial-img {
+      // start carrousel style
+      display: flex;
+      justify-content: left;
+      overflow-x: auto;
+      &::-webkit-scrollbar {
+        visibility: hidden;
+        display: none;
+      }
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
     .testimonial-img {
       flex-basis: 50%;
-      max-width: 62.7rem;
       width: 100%;
       margin: 0 auto;
       margin-bottom: 3rem;
       @include tablet() {
         margin-bottom: 0;
       }
+      img {
+        min-width: 100%;
+        position: relative;
+        left: 0;
+        transition: 0.5s;
+      }
+      // end carrousel style
     }
     .testimonial-text {
       flex-basis: 50%;
-      @include tablet(){
+      @include tablet() {
         margin-left: 5rem;
       }
+      //start carrousel style
+      .testimonial-text_perso {
+        min-width: 100%;
+        width: 1rem;
+        position: relative;
+        left: 0;
+        transition: 0.5s;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+      }
+      //end carrousel style
       h2 {
         font-weight: $medium;
         line-height: 6.4rem;
-        margin-bottom: 5.1rem;
+        margin-bottom: 3.2rem;
         font-size: 3.2rem;
         @include tablet() {
           font-size: 4.2rem;
@@ -92,11 +127,15 @@
           display: flex;
           justify-content: center;
           align-items: center;
+          cursor: pointer;
           &.btn-left {
             margin-right: 3.6rem;
           }
-          &.btn-right {
+          &.active {
             background-color: $yellow;
+          }
+          &.disabled {
+            pointer-events: none;
           }
         }
       }
@@ -104,6 +143,5 @@
   }
 }
 
-.more-testimonials{
-  
+.more-testimonials {
 }
