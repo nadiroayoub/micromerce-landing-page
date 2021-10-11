@@ -31,17 +31,20 @@
     }
     .list-horizontal {
       display: none;
-      @include mobile(){
+      @include mobile() {
         display: block;
       }
       li {
         a.list-horizontal_btn {
-          text-align: center;
-          background-color: $yellow;
-          font-size: 1.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 21.5rem;
+          height: 5rem;
           font-size: 2.2rem;
+          font-weight: $medium;
           color: $white;
-          padding: 1.4rem 1.5rem 1.8rem 1.8rem;
+          background-color: $yellow;
           border-radius: 5px;
         }
       }

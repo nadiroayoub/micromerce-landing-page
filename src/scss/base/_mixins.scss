@@ -16,6 +16,12 @@
     @content;
   }
 }
+
+@mixin large_screens {
+  @media (min-width: #{$large_screens}) {
+    @content;
+  }
+}
 @mixin grid($columnas, $espaciado) {
   display: grid;
   gap: $espaciado;

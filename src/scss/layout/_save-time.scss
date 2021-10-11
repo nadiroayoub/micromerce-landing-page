@@ -42,8 +42,14 @@
   }
   .save-time_content {
     @include grid(1, 3rem);
+    @include tablet() {
+      @include grid(3, 2rem);
+    }
     @include desktop() {
-      @include grid(3, 9rem);
+      @include grid(3, 4rem);
+    }
+    @include large_screens() {
+      @include grid(3, 9.6rem);
     }
     .save-time_card {
       display: flex;
