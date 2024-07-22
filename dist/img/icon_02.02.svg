@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#E8B426;}
+	.st1{opacity:0.54;}
+</style>
+<g>
+	<circle class="st1" cx="75" cy="175" r="50"/>
+	<circle class="st1" cx="425" cy="175" r="50"/>
+	<path class="st1" d="M450,250h-50c-13.8,0-26.2,5.5-35.2,14.5c31.5,17.3,53.8,48.4,58.7,85.5H475c13.8,0,25-11.2,25-25v-25
+		C500,272.4,477.6,250,450,250z"/>
+	<circle class="st0" cx="250" cy="162.5" r="87.5"/>
+	<path class="st0" d="M310,275h-6.5c-16.2,7.8-34.3,12.5-53.5,12.5s-37.2-4.7-53.5-12.5H190c-49.7,0-90,40.3-90,90v22.5
+		c0,20.7,16.8,37.5,37.5,37.5h225c20.7,0,37.5-16.8,37.5-37.5V365C400,315.3,359.7,275,310,275z"/>
+	<path class="st1" d="M135.2,264.5c-9.1-9-21.5-14.5-35.2-14.5H50c-27.6,0-50,22.4-50,50v25c0,13.8,11.2,25,25,25h51.5
+		C81.4,313,103.8,281.8,135.2,264.5L135.2,264.5z"/>
+</g>
+</svg>
